@@ -1,0 +1,43 @@
+Problem Statement:
+
+1)Seema is working at a company where the salary structure is quite unique. The salary for the first month is Rs. 10, and for each subsequent month, it doubles compared to the previous month. Seema is curious about how much salary she will accumulate over a certain period.
+
+Input format :
+The input consists of a single integer, n, representing the number of months for which Seema wants to calculate the total salary.
+
+Output format :
+The output displays a single integer representing the total salary accumulated by Seema over n months.
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+1 < n < 20
+
+Sample test cases :
+Input 1 :
+1
+Output 1 :
+10
+Input 2 :
+3
+Output 2 :
+70
+
+SOLUTION:
+import java.util.Scanner;
+class main
+{
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        int t=0;
+        int c=10;
+        for(int i=1;i<=n;i++)
+        {
+            t+=c;
+            c*=2;
+        }
+        System.out.print(t);
+    }
+}
