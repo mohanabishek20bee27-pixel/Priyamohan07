@@ -1,0 +1,46 @@
+Problem Statement
+
+1)Ragu is fascinated by number manipulation and wants to create a program that reverses a given integer. He has a keen interest in understanding how numbers can be reversed.
+
+Write a program to help him achieve this task.
+
+Input format :
+The input consists of an integer num, representing the number to be reversed.
+
+Output format :
+The first line of output prints an integer representing the reversed digits of the input number.
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+103 ≤ num ≤ 109
+
+Sample test cases :
+Input 1 :
+12458
+Output 1 :
+85421
+Input 2 :
+28463
+Output 2 :
+36482
+
+SOLUTION:
+import java.util.Scanner;
+class main
+{
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        int a=scan.nextInt();
+        int d;
+        int r=0;
+        while(a!=0)
+        {
+            d=a%10;
+            r=r*10+d;
+            a=a/10;
+        }
+        System.out.print(r);
+    }
+}
