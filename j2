@@ -1,0 +1,46 @@
+Problem Statement
+
+1)Alex is teaching his younger sister how to count the number of digits in an integer. He wants to write a program that takes an integer n as input and counts the number of digits using a do-while loop. 
+
+Input format :
+The input consists of a single integer n, representing the number whose digits need to be counted.
+
+Output format :
+The output prints a single integer representing the count of digits in the given number.
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 ≤ n ≤ 107
+
+Sample test cases :
+Input 1 :
+1
+Output 1 :
+1
+Input 2 :
+1000
+Output 2 :
+4
+Input 3 :
+54782
+Output 3 :
+5
+
+SOLUTION:
+import java.util.Scanner;
+class amin
+{
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        int count=0;
+        do
+        {
+            count++;
+            n=n/10;
+        }while(n>0);
+        System.out.print(count);
+    }
+}
