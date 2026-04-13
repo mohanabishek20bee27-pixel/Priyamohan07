@@ -1,0 +1,44 @@
+Create a C++ program that uses a Friend Class to perform arithmetic operations on private data members of two different classes.
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class a
+{
+   private:
+      int d;
+   public:
+      friend class b;
+      a()
+      {
+         d=7;
+      }
+};
+class b
+{
+   private:
+      int c;
+      b()
+      {
+         c=7
+      }
+   public:
+      b()
+      {
+      }
+      void add(a x,b y)
+      {
+         int d=(x.d+y.c);
+         cout<<"add:"<<d<<endl;
+         int e=(x.d*y.c);
+         cout<<"mul:"<<e;
+      }
+};
+int main()
+{
+      a s;
+      b t;
+      t.add(s,t);
+      return 0;
+}
