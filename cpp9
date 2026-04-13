@@ -1,0 +1,67 @@
+Create a C++ program to perform arithmetic operations on complex numbers using operator overloading and coordinate conversion.
+
+SOLUTION:
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+class comp
+    {
+        int r,i;
+        public:
+        comp()
+        {
+        }
+
+        comp(int x,int y)
+        {
+            r=x;
+            i=y;
+        }
+        void pol(float &rt,float &an)
+        {
+            rt=sqrt(r*r+i*i);
+            an=atan2(i,r);
+            cout<<r<<" angle is "<<an<<endl;
+        }
+        void rec(float rt,float an)
+        {
+            r=rt*cos(an);
+            i=rt*sin(an);
+        }
+        comp operator-(comp &c)
+        {
+            return comp(r-c.r,i-c.i);
+        }
+        comp operator*(comp &c)
+        {
+            float ra1,ia1,ra2,ia2;
+            pol(ra1,ia1);
+            c.pol(ra2,ia2);
+            float rt1=ra1*ra2;
+            float it1=ia1+ia2;
+            comp t;
+            t.rec(rt1,it1);
+            return t;
+        }
+        void display()
+        {
+            cout<<r<<"+j"<<i<<""<<endl;
+        }
+    };
+    int main()
+    {
+        comp c1(7,8);
+        comp c2(8,7);
+        c1.display();
+        c2.display();
+        comp c3=c1-c2;
+        cout<<"difference=";
+        c3.display();
+        cout<<endl;
+        comp c4=c1*c2;
+        cout<<"product=";
+        c4.display();
+        cout<<endl;
+        return 0;
+    }
