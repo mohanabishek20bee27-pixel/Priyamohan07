@@ -1,0 +1,45 @@
+Convert decimal to binary usin class.
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class calci
+{
+   int temp,dec,i,count;
+   public:
+ calci()
+   {
+      cout<<"enter the decimal number";
+      cin>>dec;
+   }
+   void data()
+   {
+      temp=dec;
+      count=0;
+      while(dec!=0);
+      {
+         dec=dec/2;
+         count++;
+      }
+      int*bcd=new int[count];
+      int index=count-1;
+      int num=dec;
+      while(num>0)
+      {bcd[index--]=num%2;
+         num/=2;
+      }
+      cout<<"binary:";
+
+      for(i=0;i<count;i++)
+     {
+         cout<<bcd[count];
+      }
+   }
+};
+int main()
+{
+   calci b1;
+   b1.data();
+   return 0;
+}
