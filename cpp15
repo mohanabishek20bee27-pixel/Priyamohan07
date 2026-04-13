@@ -1,0 +1,102 @@
+Write a C++ program to illustrate how a base class pointer can be used to call overridden methods in a deep inheritance hierarchy.
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+    public:
+        int a;
+        virtual void print()
+        {
+            a = 0;
+            cout << "a=" << a << endl;
+        }
+};
+
+class B : public A
+{
+    public:
+        int b;
+        void print()
+        {
+            b = 1;
+            cout << "b=" << b << endl;
+        }
+};
+
+class C : public B
+{
+    public:
+        int c;
+        void print()
+        {
+            c = 2;
+            cout << "c=" << c << endl;
+        }
+};
+
+class D : public C
+{
+    public:
+        int d;
+        void print()
+        {
+            d = 3;
+            cout << "d=" << d << endl;
+        }
+};
+
+class E : public D
+{
+    public:
+        int e;
+        void print()
+        {
+            e = 4;
+            cout << "e=" << e << endl;
+        }
+};
+
+class F : public E
+{
+    public:
+        int f;
+        void print()
+        {
+            f = 5;
+            cout << "f=" << f << endl;
+        }
+};
+
+int main()
+{
+    A a;
+    A *aptr;
+    aptr = &a;
+    aptr->print();
+
+    B b1;
+    aptr = &b1;
+    aptr->print();
+
+    C c2;
+    aptr = &c2;
+    aptr->print();
+
+    D d3;
+    aptr = &d3;
+    aptr->print();
+
+    E e4;
+    aptr = &e4;
+    aptr->print();
+
+    F f5;
+    aptr = &f5;
+    aptr->print();
+
+    return 0;
+}
