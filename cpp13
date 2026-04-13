@@ -1,0 +1,49 @@
+Write a C++ program to overload the multiplication operator (*) to multiply an object of a class by an integer in any order 
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class mul
+{
+   int x;
+   public:
+   mul()
+   {
+   }
+   void getdata()
+   {
+      cout<<"enter value:";
+      cin>>x;
+   }
+   friend mul operator*(mul&m,int y);
+   friend mul operator*(int y,mul&m);
+   void display()
+   {
+      cout<<"product:"<<x<<endl;
+   }
+};
+mul operator*(mul&m,int y)
+{
+   mul z;
+   z.x=m.x*y;
+   return z;
+}
+mul operator*(int y,mul&m)
+{
+   mul b;
+   {
+      b.x=y*m.x;
+      return b;
+   }
+   }
+   int main()
+   {
+      mul m1,m2,m3;
+      m1.getdata();
+      m2=m1*7;
+      m2.display();
+      m3=8*m1;
+      m3.display();
+      return 0;
+   }
