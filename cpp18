@@ -1,0 +1,54 @@
+Write a C++ program to manage store item details and calculate the total cost for a specific item.
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class store
+{
+   string name;
+   int code_no,no_of_items;
+   float price;
+   public:
+   store()
+   {
+      name="";
+      code_no=0;
+      no_of_items=0;
+      price=0;
+   }
+   int getdata()
+   {
+      cout<<"enter the name:";
+      cin>>name;
+      cout<<"enter the code number:";
+      cin>>code_no;
+      cout<<"enter number of items:";
+      cin>>no_of_items;
+      cout<<"enter the price of the item:";
+      cin>>price;
+   }
+   int getprice()
+   {
+      return price;
+   }
+   int getnoitem()
+   {
+      return no_of_items;
+   }
+   ~store()
+   {
+   }
+
+};
+int main()
+{
+   int a,b;
+   store s1;
+   s1.getdata();
+   a=s1.getprice();
+   b=s1.getnoitem();
+   cout<<"total:"<<a*b;
+   return 0;
+
+}
