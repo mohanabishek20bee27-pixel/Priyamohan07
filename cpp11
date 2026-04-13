@@ -1,0 +1,111 @@
+Implement a Stack class in C++ that uses a custom Exception Hierarchy to handle errors such as overflow and underflow.
+
+SOLUTION:
+
+#include<iostream>
+#include<stdexcept>
+class so:public exe
+{
+   public:
+      char st()
+      {
+         throw()
+         {
+            return "stack overflow";
+         }
+      }
+};
+class su:public exe
+{
+   public:
+      char st()
+         throw()
+         {
+            return "stack underflow";
+         }
+};
+class emp:public exe
+{
+   public:
+      char st()
+         throw()
+         {
+            return "empty stack";
+         }
+};
+class ex
+{
+   private:
+      int arr[7],int i;
+   public:
+      ex()
+      {
+         top==-1;
+      }
+      void push(int x)
+      {
+         if(top>=6)
+         {
+            throw so;
+         }
+         arr[++i]=x;
+         cout<<"pushed"<<x<<endl;
+      }
+      void pop()
+      {
+         if(i==-1)
+         {
+            throw su;
+         }
+         cout<<"popped"<<arr[top--]<<endl;
+      }
+      void empty()
+      {
+         try
+         {
+            if(top==-1)
+               throw emp;
+            pop();
+         }
+         catch(emp &e)
+         {
+            cout<<"caught"<<e.st()<<endl;
+            throw;
+         }
+      }
+};
+int main()
+{
+   ex e1;
+   try
+   {
+      e1.empty();
+   }
+   catch(...)
+   {
+      cout<<"rethrown empty stack";
+   }
+   try
+   {
+      for(int j=0;j<8;j++)
+      {
+         e1.push(j);
+      }
+   }
+   catch(so &e1)
+   {
+      cout<<e.st()<<endl;
+   }
+   try
+   {
+      for(int j=0;j<8;j++)
+      {
+         e1.pop();
+      }
+   }
+   catch(su &e)
+   {
+      cout<<e.st()<<endl;
+   }
+   return 0;
+}
