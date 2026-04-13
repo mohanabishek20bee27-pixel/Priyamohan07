@@ -1,0 +1,41 @@
+Calculate the emf of the generater using function overloading.
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class vol
+{
+public:
+int eg1,eg2,egc;
+float ia;
+vol()
+{
+}
+void gen(double v=220.0,float ra=1.1,int rse=6,int rsh=75)
+{
+   float ia=5.7f;
+   int ise=2;
+   eg1=v+(ise*rse)+(ia*ra);
+   cout<<"the emf generated in series generator:"<<eg1<<endl;
+}
+void gen(int il,double v=220.0,float ra=1.1,int rse=6,int rsh=75)
+{
+   double ish=3.0;
+   ia=ish+il;
+   eg2=v+(ia*ra);
+   cout<<"the emf generated in shunt generator:"<<eg2<<endl;
+}
+void gen(float ia,int ise,double v=220.0,float ra=1.1,int rse=6,int rsh=75)
+{
+   egc=v+(ia*ra)+(ise*rse);
+   cout<<"the emf generated in compound generator:"<<egc<<endl;
+}
+};
+int main()
+{   vol v1;
+   v1.gen();
+   v1.gen(7);
+   v1.gen(15.7f,17);
+   return 0;
+}
