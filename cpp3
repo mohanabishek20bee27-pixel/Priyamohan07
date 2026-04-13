@@ -1,0 +1,50 @@
+Problem Statement:
+Create a C++ program to perform conversion between two different coordinate systems using classes.
+
+SOLUTION:
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+class rectangle;
+class polar
+{
+   int r,a;
+   public:
+   polar(int x,int y)
+   {
+      r=x;
+      a=y;
+   }
+   int getdata()
+   {
+      return r;
+   }
+   int getvalue()
+   {
+      return a;
+   }
+};
+class rectangle
+{
+   int x1,y1,x2,y2;
+   public:
+   rectangle(polar p)
+   {
+      x2=p.getdata();
+      y2=p.getvalue();
+      x1=x2*cos(y2);
+      y1=x2*sin(y2);
+   }
+   void print()
+   {
+      cout<<"rectangular:"<<x1<<"+j"<<y1<<endl;
+   }
+};
+int main()
+{
+   polar p1(7,8);
+   rectangle rt=rectangle(p1);
+   rt.print();
+   return 0;
+}
