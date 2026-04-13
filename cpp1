@@ -1,0 +1,35 @@
+Find the voltage across resistance using function overloading.
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class vol
+{
+   public:
+      float i1,i2,r1,r2,r3,v1,v2,v3;
+      vol()
+      {
+      }
+      void voltage(float r1)
+{
+   i1=100/r1;
+   v1=i1*r1;
+   cout<<"voltage across r1:"<<v1<<endl;
+}
+void voltage(float r2,float r3)
+{
+   i2=(100/(r2+r3));
+   v2=i2*r2;
+   cout<<"voltage across r3:"<<v2<<endl;
+   v3=i2*r3;
+   cout<<"voltage across r3:"<<v3;
+}
+};
+int main()
+{
+   vol v1;
+   v1.voltage(7.5);
+   v1.voltage(6.5,8.5);
+   return 0;
+}
