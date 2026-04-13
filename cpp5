@@ -1,0 +1,52 @@
+Design a C++ program to track student exam scores and determine how many students performed better than a specific individual.Class Student: Create a class that contains:An integer array to store 5 subject scores.A method input() to read 5 scores from the console.A method calculateTotalScore() that returns the sum of all 5 subject scores.Operator Overloading: Overload the greater-than operator (>) so that you can directly compare two Student objects based on their total scores.Dynamic Memory: In the main function, ask the user for the number of students (\(n\)) and create a dynamic array of Student objects.The Comparison:Assume the first student in the list is a student named "Zana."Compare every other student's total score against Zana's total score.Count and display how many students achieved a higher total score than Zana.Sample Input:textEnter number of students: 3
+Enter 5 scores for student 1: 10 10 10 10 10 (Zana's Total: 50)
+Enter 5 scores for student 2: 20 20 20 20 20 (Total: 100)
+Enter 5 scores for student 3: 5 5 5 5 5       (Total: 25)
+
+SOLUTION:
+
+#include <iostream>
+using namespace std;
+
+class Student {
+    int scores[5];
+public:
+    void input() {
+        for(int i = 0; i < 5; i++) {
+            cin >> scores[i];
+        }
+    }
+    int calculateTotalScore() {
+        int total = 0;
+        for(int i = 0; i < 5; i++) {
+            total += scores[i];
+        }
+        return total;
+    }
+    bool operator>(Student other) {
+        return this->calculateTotalScore() > other.calculateTotalScore();
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter number of students: ";
+    cin >> n;
+
+    Student* s = new Student[n];
+
+    for(int i = 0; i < n; i++) {
+        cout << "Enter 5 scores for student " << i + 1 << ": ";
+        s[i].input();
+    }
+    Student zana = s[0];
+    int count = 0;
+    for(int i = 1; i < n; i++) {
+        if(s[i] > zana) { 
+            count++;
+        }
+    }
+    cout << "Number of students who scored higher than Zana: " << count << endl;
+
+    return 0;
+}
