@@ -1,0 +1,32 @@
+Write a C++ program to create a class representing a rectangle and calculate its area.
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class rect
+{
+   int l,b;
+   public:
+   rect()
+   {
+   }
+   void get()
+   {
+      cout<<"enter length:";
+      cin>>l;
+      cout<<"enter breadth:";
+      cin>>b;
+   }
+   void area()
+   {
+      cout<<"area of rectangle is:"<<l*b;
+   }
+};
+   int main()
+   {
+      rect r;
+      r.get();
+      r.area();
+      return 0;
+   }
