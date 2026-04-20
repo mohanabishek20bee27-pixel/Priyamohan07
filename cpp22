@@ -1,0 +1,71 @@
+Study the provided dist class implementation. Trace the execution of the main() function and provide the values of m and cm for the following objects at the end of the program:
+Value of d1: _______
+Value of d4: _______
+Value of d5: _______
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class dist
+{
+    int m,cm;
+    public:
+    dist(int x,int y)
+    {
+        m=x;
+        cm=y;
+    }
+    dist operator++(int);
+    dist operator--(int);
+    dist operator++()
+    {
+        ++m;
+        ++cm;
+        return dist(m,cm);
+    }
+    dist operator--()
+    {
+        --m;
+        --cm;
+        return dist(m,cm);
+    }
+
+    void print()
+    {
+        cout<<m<<endl;
+        cout<<cm<<endl;
+    }
+};
+dist dist::operator++(int)
+{
+   dist temp(m,cm);
+   m++;
+   cm++;
+    return temp;
+}
+dist dist::operator--(int)
+{
+    dist temp1(m,cm);
+    m--;
+    cm--;
+    return temp1;
+}
+int main()
+{
+    dist d1(7,8);
+
+    dist d2=++d1;
+    cout<<"before increment:"<<endl;
+    d1.print();
+    dist d3=--d1;
+    cout<<"before decrement:"<<endl;
+    d1.print();
+    dist d4=d1++;
+    cout<<"after increment:"<<endl;
+    d1.print();
+    dist d5=d1--;
+    cout<<"after decrement:"<<endl;
+    d1.print();
+    return 0;
+}
