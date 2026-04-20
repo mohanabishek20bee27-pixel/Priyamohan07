@@ -1,0 +1,22 @@
+Arithmetic Operators and Data Handling.
+
+SOLUTION:
+  
+#include<stdio.h>
+int main()
+{
+   int a,b,sum,dif,pro,rem,quo;
+   printf("Enter the two numbers\n");
+   scanf("%d%d",&a,&b);
+   sum=a+b;
+   dif=a-b;
+   pro=a*b;
+   rem=a%b;
+   quo=a/b;
+   printf("The sum=%d\n",sum);
+   printf("The dif=%d\n",dif);
+   printf("The pro=%d\n",pro);
+   printf("The rem=%d\n",rem);
+   printf("The quo=%d\n",quo);
+   return 0;
+}
