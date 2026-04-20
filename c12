@@ -1,0 +1,31 @@
+Implement a Linear Search algorithm, but it contains a common logical error regarding where the result is printed.
+
+SOLUTION:
+
+#include<stdio.h>
+int main()
+{
+   int a[10],n,i,k,t;
+   printf("enter the total number of elements");
+   scanf("%d",&n);
+   printf("enter elements one by one");
+   for(i=0;i<n;i++)
+   {
+      scanf("%d",&a[i]);
+   }
+   printf("enter the element to be searched");
+   scanf("%d",&k);
+   for(i=0;i<n;i++)
+   {
+      if(a[i]==k)
+      {
+         t=1;
+         break;
+      }
+      if(t==1)
+         printf("element is found");
+      else
+         printf("element is not found");
+   }
+      return 0;
+   }
