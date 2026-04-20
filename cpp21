@@ -1,0 +1,33 @@
+Now that you have a basic class to store meters and centimeters, try to implement Operator Overloading to add two distances together.
+
+SOLUTION:
+  
+#include<iostream>
+using namespace std;
+
+class Distance {
+    float m, cm; // Private by default
+public:
+    Distance() {
+        m = 0;
+        cm = 0;
+    }
+
+    void getdata() {
+        cout << "enter m: ";
+        cin >> m;
+        cout << "enter cm: ";
+        cin >> cm;
+    }
+
+    void display() {
+        cout << "Distance: " << m << "m " << cm << "cm" << endl;
+    }
+};
+
+int main() {
+    Distance d1;
+    d1.getdata();
+    d1.display();
+    return 0;
+}
