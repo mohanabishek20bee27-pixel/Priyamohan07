@@ -1,0 +1,85 @@
+The objective of this program is to convert an invent1 object into a float (representing total value) and an invent2 object. To make the main() function work without errors, perform the following tasks:
+
+SOLUTION:
+
+#include<iostream>
+using namespace std;
+class invent2;
+class invent1
+{
+   int code;
+   int items;
+   float price;
+   public:
+      invent1(int a,int b,float c)
+      {
+         code=a;
+         items=b;
+         price=c;
+      }
+      void get()
+      {
+         cout<<"code:"<<code<<endl;
+         cout<<"items:"<<items<<endl;
+         cout<<"value:"<<price<<endl;
+      }
+      int getcode()
+      {
+         return code;
+      }
+      int getitems()
+      {
+         return items;
+      }
+      float getprice()
+      {
+         return price;
+      }
+      /* operator invent2()
+       {
+        invent2 temp;
+        temp.code=code;
+        temp.value=price*items;
+        return temp;
+        }*/
+};
+   class invent2
+   {
+      int code;
+      float value;
+      public:
+      invent2()
+      {
+         code=0;value=0;
+      }
+      invent2(int x,float y)
+      {
+         code=x;
+         value=y;
+      }
+      void get()
+      {
+         cout<<"code:"<<code<<endl;
+         cout<<"value:"<<value<<endl;
+      }
+      invent2(invent1 p)
+      {
+         code=p.getcode();
+            value=p.getitems()*p.getprice();
+      }
+   };
+int main()
+{
+  invent1 s1(100,5,140.0);
+  invent2 d1;
+  float tot;
+  tot=s1;
+  d1=s1;
+  cout<<"product details-invent1 type"<<endl;
+  s1.get();
+  cout<<"stock value"<<endl;
+  cout<<"value="<<tot<<endl;
+  cout<<"product details-invent2 type"<<endl;
+  d1.get();
+  return 0;
+}
