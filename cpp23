@@ -1,0 +1,154 @@
+The grade calculation logic is repeated five times (for s1 through s5).
+Task: Propose a way to optimize this (e.g., using a separate function or an array/loop) to avoid code duplication. Provide a small code snippet of your improved approach.
+
+SOLUTION:
+  
+#include<iostream>
+using namespace std;
+class stu
+{
+   int a,b,c;
+   string s;
+   public:
+      void get()
+      {
+         cout<<"name:";
+         cin>>s;
+         cout<<"age:";
+         cin>>a;
+         cout<<"rno:";
+         cin>>b;
+         cout<<"yr of adm:";
+         cin>>c;
+      }
+};
+class mark:public stu
+{
+   public:
+         void print()
+         {
+            void get();
+         int s1,s2,s3,s4,s5;
+         cout<<"s1:";
+         cin>>s1;
+         cout<<"s2:";
+         cin>>s2;
+         cout<<"s3:";
+         cin>>s3;
+         cout<<"s4:";
+         cin>>s4;
+         cout<<"s5:";
+         cin>>s5;
+         cout<<"name:"<<s<<endl;
+         cout<<"age:"<<a<<endl;
+         cout<<"rno:"<<b<<endl;
+         cout<<"yr of adm:"<<c<<endl;
+         if(50<s1<=60)
+         {
+            cout<<s1<<"Grade:D";
+         }
+         else if(60<s1<=70)
+         {
+            cout<<s1<<"Grade:C";
+         }
+         else if(70<s1<=80)
+         {
+            cout<<s1<<"Grade:B";
+         }
+         else if(80<s1<=90)
+         {
+            cout<<s1<<"Grade:A";
+         }
+         else
+         {
+            cout<<s1<<"Grade:O";
+         }
+         if(50<s2<=60)
+         {
+            cout<<s2<<"Grade:D";
+         }
+         else if(60<s2<=70)
+         {
+            cout<<s2<<"Grade:C";
+         }
+         else if(70<s2<=80)
+         {
+            cout<<s2<<"Grade:B";
+         }
+         else if(80<s2<=90)
+         {
+            cout<<s2<<"Grade:A";
+         }
+         else
+         {
+            cout<<s2<<"Grade:O";
+         }
+         if(50<s3<=60)
+         {
+            cout<<s3<<"Grade:D";
+         }
+         else if(60<s3<=70)
+         {
+            cout<<s3<<"Grade:C";
+         }
+         else if(70<s3<=80)
+         {
+            cout<<s3<<"Grade:B";
+         }
+         else if(80<s3<=90)
+         {
+            cout<<s3<<"Grade:A";
+         }
+         else
+         {
+            cout<<s3<<"Grade:O";
+         }
+         if(50<s4<=60)
+         {
+            cout<<s4<<"Grade:D";
+         }
+         else if(60<s4<=70)
+         {
+            cout<<s4<<"Grade:C";
+         }
+         else if(70<s4<=80)
+         {
+            cout<<s4<<"Grade:B";
+         }
+         else if(80<s4<=90)
+         {
+            cout<<s4<<"Grade:A";
+         }
+         else
+         {
+            cout<<s4<<"Grade:O";
+         }
+          if(50<s5<=60)
+         {
+            cout<<s5<<"Grade:D";
+         }
+         else if(60<s5<=70)
+         {
+            cout<<s5<<"Grade:C";
+         }
+         else if(70<s5<=80)
+         {
+            cout<<s5<<"Grade:B";
+         }
+         else if(80<s5<=90)
+         {
+            cout<<s5<<"Grade:A";
+         }
+         else
+         {
+            cout<<s5<<"Grade:O";
+         }
+         cout<<"total marks:"<<s1+s2+s3+s4+s5;
+      }
+};
+int main()
+{
+   mark m;
+   m.print();
+   return 0;
+}
