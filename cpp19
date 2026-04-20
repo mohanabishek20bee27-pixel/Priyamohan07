@@ -1,0 +1,42 @@
+The following C++ program aims to demonstrate how one class can access the private members of another using the friend keyword. However, the code contains three specific errors (two syntax errors and one logical/structural error regarding constructors).
+
+#include<iostream>
+using namespace std;
+class a
+{
+   private:
+      int d;
+   public:
+      friend class b;
+      a()
+      {
+         d=7;
+      }
+};
+class b
+{
+   private:
+      int c;
+      b()
+      {
+         c=7
+      }
+   public:
+      b()
+      {
+      }
+      void add(a x,b y)
+      {
+         int d=(x.d+y.c);
+         cout<<"add:"<<d<<endl;
+         int e=(x.d*y.c);
+         cout<<"mul:"<<e;
+      }
+};
+int main()
+{
+      a s;
+      b t;
+      t.add(s,t);
+      return 0;
+}
