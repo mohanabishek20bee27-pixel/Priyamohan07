@@ -1,0 +1,9 @@
+Write a program to generate a list of numbers within a user-defined range and step, then display that list in reverse order.
+
+SOLUTION:
+
+start=int(input("enter the starting range:"))
+end=int(input("enter the ending range:"))
+step=int(input("enter the step:"))
+num_list=list(range(start,end,step))[::-1]
+print("reversed list:",num_list)
