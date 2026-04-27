@@ -1,0 +1,7 @@
+Write a program to flatten a tuple of tuples into a single tuple.
+  
+SOLUTION:
+  
+tup=((8,28),(4,12),(5,6))
+single=sum(tup,())
+print single
