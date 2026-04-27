@@ -1,0 +1,11 @@
+Write a program that takes a 4-digit number as input and calculates the sum of its digits using a while loop.
+
+SOLUTION:
+  
+a=int(input("enter 4 digit number"))
+b=0
+if(a>=1000 and a<=9999):
+   while(a>0):
+      b=b+(a%10)
+      a=a/10
+print("the sum of digits",b)
