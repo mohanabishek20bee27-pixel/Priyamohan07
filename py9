@@ -1,0 +1,13 @@
+Write a program that takes two inputs and checks whether they are equal.
+  
+SOLUTION:
+
+a=int(input("enter val1"))
+b=int(input("enter val2"))
+def val(a,b):
+   return a==b
+if(a==b):
+  print("the values are equal")
+else:
+  print("the values are not equal")
+val(a,b)
