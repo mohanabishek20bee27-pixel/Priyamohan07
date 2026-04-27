@@ -1,0 +1,10 @@
+Write a Python program to calculate the Euclidean distance between two points using the distance formula.
+
+SOLUTION:
+
+x1=int(input("enter the num1"))
+x2=int(input("enter the num2"))
+y1=int(input("enter the num3"))
+y2=int(input("enter the num4"))
+distance=((x2-x1)**2+(y2-y1)**2)**0.5
+print("distance between two points=",distance)
