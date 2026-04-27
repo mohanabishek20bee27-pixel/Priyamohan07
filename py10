@@ -1,0 +1,12 @@
+Write a program to calculate a student's final weighted grade based on multiple categories: Exams (50%), Sports (20%), and Extra-curricular activities (30%).
+
+SOLUTION:
+
+a=int(input("enter ex1 mark"))
+b=int(input("enter ex2 mark"))
+c=int(input("enter sports mark"))
+d=int(input("enter extra curricular1 mark"))
+e=int(input("enter extra curricular2 mark"))
+f=int(input("enter extra curricular3 mark"))
+sum=(((a+b)/2)*0.5+(c*0.2)+((d+e+f)/3*0.3))
+print(sum)
