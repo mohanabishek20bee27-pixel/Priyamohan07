@@ -1,0 +1,11 @@
+Write a program to take two sequences of elements from the user, convert them into tuples, and concatenate them into a single tuple.
+
+SOLUTION:
+
+a=raw_input("Enter a elements: ").split()
+b=raw_input("Enter b elements: ").split()
+x=tuple(a)
+y=tuple(b)
+tup=()
+tup=x+y
+print tup
