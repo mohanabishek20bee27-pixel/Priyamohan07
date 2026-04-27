@@ -1,0 +1,9 @@
+Write a function to remove all duplicate elements from a list.
+
+SOLUTION:
+
+def remove duplicate_with_set(input_list):
+   return list(set(input_list))
+input_list=[1,2,7,7,7,1,2]
+output=remove_duplicates_with_set(input_list)
+print(output)
