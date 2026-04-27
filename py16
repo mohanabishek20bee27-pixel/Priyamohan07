@@ -1,0 +1,11 @@
+Write a program to sort the strings in a tuple in alphabetical order.
+  
+SOLUTION:
+
+t = ("srindhi", "srinivas", "madhu", "nija")
+print"Input: ",t
+sorted_tuple = tuple(sorted(t))
+print "Sorted tuple: ",sorted_tuple
+[23bee026@mepcolinux ~]$python ex6e.py
+Input:  ('srindhi', 'srinivas', 'madhu', 'nija')
+Sorted tuple:  ('madhu', 'nija', 'srindhi', 'srinivas')
