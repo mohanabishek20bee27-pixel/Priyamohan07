@@ -1,0 +1,11 @@
+Write a program to find and extract all repeated elements from a tuple and store them in a new tuple.
+
+SOLUTION:
+  
+t = (1, 2, 3, 2, 4, 1, 5)
+repeated = []
+for x in t:
+    if t.count(x) > 1 and x not in repeated:
+        repeated.append(x)
+repeated_tuple = tuple(repeated)
+print repeated_tuple
