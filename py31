@@ -1,0 +1,21 @@
+Write a program to find the roots of a quadratic equation using the discriminant formula.
+
+SOLUTION:
+
+import math
+a=int(input("enter a"))
+b=int(input("enter b"))
+c=int(input("enter c"))
+d=(b*b)-(4*a*c)
+if(d>0):
+   r1=(-b+math.sqrt(d))/2*a
+   r2=(-b-math.sqrt(d))/2*a
+   print("the roots are real and distinct{}".format(r1,r2))
+elif(d==0):
+   r1=-b/2*a
+   r2=-b/2*a
+   print("roots are real and equal{}".format(r1,r2))
+elif(d<0):
+   r1=(-b+math.sqrt(-d))/2*a
+   r2=(-b-math.sqrt(-d))/2*a
+   print("roots are real and img{}".format(r1,r2))
