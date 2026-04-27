@@ -1,0 +1,10 @@
+Write a program to accept a comma-separated list of elements from the user, convert it into a tuple, and perform a slicing operation based on two user-provided indices.
+
+SOLUTION:
+
+n=raw_input("Enter elements: ").split(',')
+t=tuple(n)
+print t
+x=int(input("Enter 1st index: "))
+y=int(input("Enter 2nd index: "))
+print "After slicing: ",t[x:y]
