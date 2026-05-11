@@ -1,0 +1,18 @@
+Write a program to find the largest number in an array
+
+SOLUTION:
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        ArrayList<Integer> a=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+            a.add(sc.nextInt());
+            Collections.sort(a);
+        }
+        System.out.print(a.get(n-1));
+    }
+}
